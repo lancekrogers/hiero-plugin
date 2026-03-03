@@ -1,5 +1,10 @@
 # hiero-plugin-camp
 
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)](https://nodejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Hedera](https://img.shields.io/badge/Hedera-Hiero%20CLI-8259EF?logo=hedera)](https://hedera.com)
+[![Tests](https://img.shields.io/badge/Tests-37%20passing-brightgreen)](.)
+
 Hiero CLI plugin for camp workspace management -- Hedera developer tooling.
 
 Part of the [ETHDenver 2026 Agent Economy](../README.md) submission.
@@ -9,6 +14,8 @@ Part of the [ETHDenver 2026 Agent Economy](../README.md) submission.
 hiero-plugin-camp extends the [Hiero CLI](https://github.com/hiero-ledger/hiero-cli) with workspace management commands under the `hcli camp` namespace. It wraps the `camp` binary to provide Hedera-specific project initialization, status reporting, and workspace navigation, bundling three scaffold templates for common Hedera development patterns.
 
 Built for **Hedera Track 4** at ETHDenver 2026.
+
+> **TL;DR** — A Hiero CLI plugin that brings `camp` workspace management to Hedera developers. Scaffolds projects from templates (dApp, agent, smart contract, 0G), manages multi-project workspaces, and provides fuzzy-find navigation.
 
 ### Built with Obedience Corp
 
@@ -70,6 +77,27 @@ See [docs/usage-guide.md](docs/usage-guide.md) for detailed usage examples.
 | `hedera-agent` | Go | Agent with HCS messaging and HTS token operations |
 | `0g-agent` | Go | 0G Compute inference agent with session auth and DA |
 | `0g-inft-build` | Solidity/Go | ERC-7857 iNFT minting with encrypted metadata on 0G Chain |
+
+## Project Structure
+
+```
+hiero-plugin/
+├── src/
+│   ├── index.ts               # Plugin manifest and entry point
+│   ├── commands/
+│   │   ├── init.ts            # Initialize workspace with templates
+│   │   ├── status.ts          # Show project status
+│   │   └── navigate.ts        # Fuzzy-find navigation
+│   └── templates/
+│       ├── hedera-smart-contract/
+│       ├── hedera-dapp/
+│       ├── hedera-agent/
+│       ├── 0g-agent/
+│       └── 0g-inft-build/
+├── dist/                      # Compiled output
+├── justfile                   # Task runner recipes
+└── package.json
+```
 
 ## Development
 
