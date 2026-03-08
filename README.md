@@ -7,7 +7,7 @@
 
 Hiero CLI plugin for camp workspace management -- Hedera developer tooling.
 
-Part of the [ETHDenver 2026 Agent Economy](../README.md) submission.
+Part of the [Obey Agent Economy](https://github.com/lancekrogers/Obey-Agent-Economy) project.
 
 ## Overview
 
